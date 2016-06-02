@@ -1,2 +1,10 @@
+<h1>New Dose</h1>
+
 <%= render 'form' %>
 
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.error_notification %>
+   <%= f.input :description, required: true %>
+   <%= f.association :ingredient %>
+  <%= f.button :submit %>
+<% end %>
